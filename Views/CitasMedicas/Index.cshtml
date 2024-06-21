@@ -1,0 +1,32 @@
+﻿@model IEnumerable<GestionCitasMedicas.Models.CitaMedica>
+
+@{
+    ViewData["Title"] = "Citas Médicas";
+}
+
+<h1>Citas Médicas</h1>
+
+<p>
+    <a asp-action="Create">Programar Nueva Cita</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Paciente.Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.FechaHora)</th>
+            <th>@Html.DisplayNameFor(model => model.Especialista)</th>
+            <th>@Html.DisplayNameFor(model => model.Motivo)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Paciente.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.FechaHora)</td>
+                <td>@Html.DisplayFor(modelItem => item.Especialista)</td>
+                <td>@Html.DisplayFor(modelItem => item.Motivo)</td>
+            </tr>
+        }
+    </tbody>
+</table>
