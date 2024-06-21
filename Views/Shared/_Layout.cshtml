@@ -7,35 +7,97 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Abet.styles.css" asp-append-version="true" />
+
+    <style>
+        body {
+            background-color: #f8f9fa; /* Color de fondo general */
+        }
+
+        .navbar {
+            background-color: #ffffff; /* Fondo del navbar */
+            border-bottom: 1px solid #dee2e6; /* Borde inferior del navbar */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra ligera */
+        }
+
+        .navbar-brand {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente de la marca */
+            font-size: 1.5rem; /* Tamaño de fuente de la marca */
+            color: #007bff; /* Color de texto de marca */
+            margin-right: 20px; /* Margen derecho para separación */
+        }
+
+        .navbar-nav .nav-link {
+            color: #343a40; /* Color de texto de los enlaces */
+            font-weight: 600; /* Peso de fuente para los enlaces */
+            transition: color 0.3s ease; /* Transición suave del color */
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #007bff; /* Color de texto de los enlaces al pasar el cursor */
+            }
+
+        .navbar-collapse {
+            justify-content: flex-end; /* Alineación a la derecha en pantallas pequeñas */
+        }
+
+        .navbar-toggler {
+            border-color: #007bff; /* Color del borde del botón de hamburguesa */
+        }
+
+        .navbar-toggler-icon {
+            background-color: #007bff; /* Color del icono de hamburguesa */
+        }
+
+        .navbar-light .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0,123,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .footer {
+            background-color: #343a40; /* Color de fondo del footer */
+            color: #ffffff; /* Color de texto del footer */
+            padding: 10px 0; /* Espaciado interno del footer */
+            text-align: center; /* Alineación centrada del texto */
+            margin-top: 20px; /* Margen superior */
+        }
+
+            .footer a {
+                color: #ffffff; /* Color de los enlaces en el footer */
+            }
+
+                .footer a:hover {
+                    color: #f8f9fa; /* Color de los enlaces en el footer al pasar el cursor */
+                }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Abet</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pacientes" asp-action="Index">Pacientes</a>
+                            <a class="nav-link" asp-area="" asp-controller="Pacientes" asp-action="Index">Pacientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CitasMedicas" asp-action="Index">Citas Médicas</a>
+                            <a class="nav-link" asp-area="" asp-controller="CitasMedicas" asp-action="Index">Citas Médicas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Tratamientos" asp-action="Index">Tratamientos</a>
+                            <a class="nav-link" asp-area="" asp-controller="Tratamientos" asp-action="Index">Tratamientos</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -47,6 +109,7 @@
             &copy; 2024 - Abet - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

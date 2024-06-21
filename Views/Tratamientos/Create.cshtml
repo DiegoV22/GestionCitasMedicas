@@ -4,39 +4,60 @@
     ViewData["Title"] = "Registrar Tratamiento";
 }
 
-<h1>Registrar Tratamiento</h1>
+<style>
+    body {
+        background-color: #E0F2F1; /* Color de fondo celeste suave */
+    }
 
-<h4>Tratamiento</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div class="form-group">
-                <label asp-for="PacienteId" class="control-label"></label>
-                <select asp-for="PacienteId" class="form-control" asp-items="ViewBag.PacienteId"></select>
-                <span asp-validation-for="PacienteId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Descripcion" class="control-label"></label>
-                <input asp-for="Descripcion" class="form-control" />
-                <span asp-validation-for="Descripcion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Instrucciones" class="control-label"></label>
-                <input asp-for="Instrucciones" class="form-control" />
-                <span asp-validation-for="Instrucciones" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EfectosSecundarios" class="control-label"></label>
-                <input asp-for="EfectosSecundarios" class="form-control" />
-                <span asp-validation-for="EfectosSecundarios" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Registrar" class="btn btn-primary" />
-            </div>
-        </form>
+    .btn-primary {
+        background-color: #007BFF; /* Color de botón azul */
+        border-color: #007BFF;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Color de botón azul más oscuro al pasar el cursor */
+            border-color: #0056b3;
+        }
+
+    .form-group label {
+        font-weight: bold; /* Texto de etiquetas en negrita */
+    }
+</style>
+
+<div class="container">
+    <h1 class="display-4">Registrar Tratamiento</h1>
+
+    <div class="row my-4">
+        <div class="col-md-6">
+            <form asp-action="Create">
+                <div class="form-group">
+                    <label asp-for="PacienteId" class="control-label">Paciente</label>
+                    <select asp-for="PacienteId" class="form-control" asp-items="ViewBag.PacienteId"></select>
+                    <span asp-validation-for="PacienteId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Descripcion" class="control-label">Descripción</label>
+                    <input asp-for="Descripcion" class="form-control" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Instrucciones" class="control-label">Instrucciones</label>
+                    <input asp-for="Instrucciones" class="form-control" />
+                    <span asp-validation-for="Instrucciones" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EfectosSecundarios" class="control-label">Efectos Secundarios</label>
+                    <input asp-for="EfectosSecundarios" class="form-control" />
+                    <span asp-validation-for="EfectosSecundarios" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Registrar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-<div>
-    <a asp-action="Index">Volver a la lista</a>
+
+    <div>
+        <a asp-action="Index" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Volver al Listado de Tratamientos</a>
+    </div>
 </div>

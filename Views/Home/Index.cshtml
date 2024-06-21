@@ -2,9 +2,56 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenido al Gestor de Citas Médicas</h1>
-    <p>Administre las citas médicas y el historial de tratamientos de sus pacientes.</p>
-    <p><img src="https://www.pedircitamedico.org/wp-content/uploads/2021/05/cita-medico.jpg" alt="Cita Médica - Recomendaciones y pasos a seguir | Pedir Cita Médico" class="img-fluid" /></p>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    body {
+        background-color: #E0F2F1; /* Color celeste suave */
+    }
+
+    .container-fluid {
+        padding-top: 80px; /* Espacio de relleno superior */
+    }
+
+    .jumbotron {
+        background-color: #FFFFFF; /* Fondo blanco */
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .lead {
+        font-size: 1.25rem; /* Tamaño de fuente para el texto principal */
+        margin-bottom: 2rem;
+    }
+
+    .jumbotron img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+        background-color: #007BFF; /* Color de botón azul */
+        border-color: #007BFF;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3; /* Color de botón azul más oscuro al pasar el cursor */
+        border-color: #0056b3;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="jumbotron">
+                <h1 class="display-4">Bienvenido al Gestor de Citas Médicas</h1>
+                <p class="lead">Administre las citas médicas y el historial de tratamientos de sus pacientes.</p>
+                <img src="https://www.pedircitamedico.org/wp-content/uploads/2021/05/cita-medico.jpg" alt="Cita Médica - Recomendaciones y pasos a seguir | Pedir Cita Médico" class="img-fluid">
+                <p class="lead mt-4">Aprenda más sobre <a href="https://learn.microsoft.com/aspnet/core">la creación de aplicaciones web con ASP.NET Core</a>.</p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Comenzar</a>
+            </div>
+        </div>
+    </div>
 </div>
